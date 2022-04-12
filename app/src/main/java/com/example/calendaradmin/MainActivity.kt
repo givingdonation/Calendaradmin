@@ -3,6 +3,7 @@ package com.example.calendaradmin
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.text.HtmlCompat
@@ -121,7 +122,34 @@ class MainActivity : AppCompatActivity() {
                 dayBtList[(i + shift - 1)].text = i.toString()
             }
         }
+        fun getsingleValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
+            var myRef = FirebaseDatabase.getInstance().getReference(reference)
 
+            for (i in path.indices){
+                myRef = myRef.child(path[i]);
+            }
+
+            //the code below was taken from the firebase documentation
+            myRef.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+
+                    val value = dataSnapshot.getValue<String>()
+                    if (value == null){
+                        tvid.setText("")
+                    } else {
+                        tvid.setText("$value")
+                    }
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Toast.makeText(getApplicationContext(), "joe" + "Failed to read value." + error.toException(), Toast.LENGTH_LONG).show()
+                }
+            })
+        }
         fun getValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
 
@@ -138,10 +166,9 @@ class MainActivity : AppCompatActivity() {
                     val value = dataSnapshot.getValue<String>()
                     if (value == null){
                         tvid.text = ""
-                        inputV.setText("")
                     } else {
                         tvid.text = HtmlCompat.fromHtml("$value", HtmlCompat.FROM_HTML_MODE_LEGACY)
-                        inputV.setText("$value")
+                        tvid.setMovementMethod(LinkMovementMethod.getInstance());
                     }
 
                 }
@@ -160,7 +187,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             //the code below was taken from the firebase documentation
-            myRef.addValueEventListener(object : ValueEventListener {
+            myRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myRef.setValue(inpu)
                     Toast.makeText(getApplicationContext(), "html added", Toast.LENGTH_SHORT).show()
@@ -221,7 +248,7 @@ class MainActivity : AppCompatActivity() {
 
                 day = Integer.parseInt(i.text.toString())
 
-
+                getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
                 getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
                 pdayTx.text = monthlist[month] + " " + day.toString()
@@ -255,6 +282,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day -= 1
             }
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
             getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
@@ -275,6 +303,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day += 1
             }
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
             getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
