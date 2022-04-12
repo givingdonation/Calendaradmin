@@ -3,13 +3,11 @@ package com.example.calendaradmin
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.text.HtmlCompat
 import androidx.core.view.isVisible
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -24,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val ppupTx = findViewById<TextView>(R.id.ppupTx)
+        //val ppupTx = findViewById<TextView>(R.id.ppupTx)
+        val insuBt = findViewById<Button>(R.id.insuBt)
         val popupV = findViewById<LinearLayout>(R.id.popupV)
         val calenV = findViewById<LinearLayout>(R.id.calenV)
         val bktcBt = findViewById<Button>(R.id.bktcBt)
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val pdayTx = findViewById<TextView>(R.id.pdayTx)
         val predBt = findViewById<Button>(R.id.predBt)
         val nexdBt = findViewById<Button>(R.id.nexdBt)
+        val inputV = findViewById<EditText>(R.id.inputV)
         val dayBtList = arrayOf(
             findViewById<Button>(R.id.day1Bt),
             findViewById<Button>(R.id.day2Bt),
@@ -198,7 +198,8 @@ class MainActivity : AppCompatActivity() {
 
                 day = Integer.parseInt(i.text.toString())
 
-                getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+
+
 
                 pdayTx.text = monthlist[month] + " " + day.toString()
 
@@ -206,6 +207,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        insuBt.setOnClickListener {
+
+            var str = inputV.getText().toString()
+            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show()
+        }
 
         predBt.setOnClickListener {
             if (day == 1){
@@ -226,7 +232,6 @@ class MainActivity : AppCompatActivity() {
                 day -= 1
             }
 
-            getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
@@ -247,7 +252,6 @@ class MainActivity : AppCompatActivity() {
                 day += 1
             }
 
-            getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
@@ -258,7 +262,7 @@ class MainActivity : AppCompatActivity() {
 
             calenV.isVisible = true
 
-            ppupTx.text = ""
+            //ppupTx.text = ""
 
             pdayTx.text = "M D"
         }

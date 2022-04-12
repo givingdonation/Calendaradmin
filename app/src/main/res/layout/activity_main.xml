@@ -575,12 +575,31 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/ppupTx"
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
-            android:text=""/>
+            android:layout_weight="3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter html"
+                android:isScrollContainer="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/insuBt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Submit"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/bktcBt"
@@ -588,6 +607,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Back to calendar"/>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
