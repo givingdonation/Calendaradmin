@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val ppupTx = findViewById<TextView>(R.id.ppupTx)
         val insuBt = findViewById<Button>(R.id.insuBt)
         val popupV = findViewById<LinearLayout>(R.id.popupV)
         val calenV = findViewById<LinearLayout>(R.id.calenV)
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val nextBt = findViewById<Button>(R.id.nextBt)
         val mnthTx = findViewById<TextView>(R.id.mnthTx)
         val pdayTx = findViewById<TextView>(R.id.pdayTx)
-        val ppupTx = findViewById<TextView>(R.id.ppupTx)
+        //val ppupTx = findViewById<TextView>(R.id.ppupTx)
         val predBt = findViewById<Button>(R.id.predBt)
         val nexdBt = findViewById<Button>(R.id.nexdBt)
         val inputV = findViewById<EditText>(R.id.inputV)
@@ -249,7 +248,7 @@ class MainActivity : AppCompatActivity() {
                 day = Integer.parseInt(i.text.toString())
 
                 getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
-                getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+                //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
                 pdayTx.text = monthlist[month] + " " + day.toString()
 
@@ -283,7 +282,7 @@ class MainActivity : AppCompatActivity() {
                 day -= 1
             }
             getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
-            getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
@@ -304,7 +303,7 @@ class MainActivity : AppCompatActivity() {
                 day += 1
             }
             getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
-            getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
