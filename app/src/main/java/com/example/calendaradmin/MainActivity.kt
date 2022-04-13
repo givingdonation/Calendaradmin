@@ -1,11 +1,13 @@
 package com.example.calendaradmin
 
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputLayout
@@ -35,6 +37,18 @@ class MainActivity : AppCompatActivity() {
         val predBt = findViewById<Button>(R.id.predBt)
         val nexdBt = findViewById<Button>(R.id.nexdBt)
         val inputV = findViewById<EditText>(R.id.inputV)
+
+        val evni1V = findViewById<EditText>(R.id.evni1V)
+        val desi1V = findViewById<EditText>(R.id.desi1V)
+        val evni2V = findViewById<EditText>(R.id.evni2V)
+        val desi2V = findViewById<EditText>(R.id.desi2V)
+        val evni3V = findViewById<EditText>(R.id.evni3V)
+        val desi3V = findViewById<EditText>(R.id.desi3V)
+        val evni4V = findViewById<EditText>(R.id.evni4V)
+        val desi4V = findViewById<EditText>(R.id.desi4V)
+
+
+
         val dayBtList = arrayOf(
             findViewById<Button>(R.id.day1Bt),
             findViewById<Button>(R.id.day2Bt),
@@ -98,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                 i.text = ""
 
                 i.isVisible = false
+                i.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500))
             }
 
 
@@ -119,6 +134,10 @@ class MainActivity : AppCompatActivity() {
                 dayBtList[(i + shift - 1)].isVisible = true
 
                 dayBtList[(i + shift - 1)].text = i.toString()
+                if (i == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("dd"))) && month == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("MM"))) - 1) {
+                    dayBtList[(i + shift - 1)].setBackgroundColor(Color.BLUE)
+
+                }
             }
         }
         fun getsingleValueFromDatabase(path: List<String>, reference: String, tvid: TextView){
@@ -237,6 +256,27 @@ class MainActivity : AppCompatActivity() {
             hideNFixDayNums()
         }
 
+        fun fillintext(){
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputV)
+
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1V)
+
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2V)
+
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3V)
+
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4V)
+
+
+
+            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+
+            pdayTx.text = monthlist[month] + " " + day.toString()
+        }
 
         for (i in dayBtList) {
 
@@ -247,19 +287,31 @@ class MainActivity : AppCompatActivity() {
 
                 day = Integer.parseInt(i.text.toString())
 
-                getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
-                //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
+                fillintext()
 
-                pdayTx.text = monthlist[month] + " " + day.toString()
+
+
 
 
             }
         }
 
-        insuBt.setOnClickListener {
 
-            var str = inputV.getText().toString()
-            addtoDatabase(listOf(monthlist[month], day.toString()), "calActivity", str)
+
+        insuBt.setOnClickListener {
+            addtoDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputV.getText().toString())
+
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1V.getText().toString())
+
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2V.getText().toString())
+
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3V.getText().toString())
+
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4V.getText().toString())
             //Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show()
         }
 
@@ -281,10 +333,9 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day -= 1
             }
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
+            fillintext()
             //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
-            pdayTx.text = monthlist[month] + " " + day.toString()
         }
 
 
@@ -302,10 +353,10 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day += 1
             }
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", inputV)
+            fillintext()
             //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
-            pdayTx.text = monthlist[month] + " " + day.toString()
+
         }
 
 

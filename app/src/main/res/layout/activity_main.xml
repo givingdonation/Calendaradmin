@@ -535,24 +535,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8"
-        >
-
+        android:weightSum="8">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:weightSum="5"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/predBt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="&#60;"
-                />
+                android:text="&#60;"/>
 
             <TextView
                 android:id="@+id/pdayTx"
@@ -562,16 +558,14 @@
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:text="M D"
-                />
+                android:text="M D"/>
 
             <Button
                 android:id="@+id/nexdBt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="&#62;"
-                />
+                android:text="&#62;"/>
 
         </LinearLayout>
 
@@ -593,48 +587,85 @@
 
         </LinearLayout>-->
 
-    <LinearLayout
-        android:id="@+id/evnlsV"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:weightSum="4"
-        >
-
         <LinearLayout
+            android:id="@+id/evnlsV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="5"
-            android:orientation="horizontal"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:weightSum="8">
 
-            >
-            <Button
-                android:id="@+id/boldBt"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="bold"/>
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni1V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi1V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni2V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi2V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni3V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi3V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/evni4V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter name"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/desi4V"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:hint="enter description"
+                android:isScrollContainer="true"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
-    </LinearLayout>
-
 
         <com.google.android.material.textfield.TextInputLayout
-
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2">
-
-
+            android:layout_weight="1">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter a note"
+                android:hint="enter note"
                 android:isScrollContainer="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -644,32 +675,30 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:text=""/>-->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:weightSum="3"
-    android:orientation="horizontal"
-
-    >
-        <Button
-            android:id="@+id/insuBt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Submit"/>
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-        <Button
-            android:id="@+id/bktcBt"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Back to calendar"/>
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/insuBt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Submit"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/bktcBt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Back to calendar"/>
 
-    </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
