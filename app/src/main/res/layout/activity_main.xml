@@ -535,7 +535,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8">
+        android:weightSum="11">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -591,7 +591,7 @@
             android:id="@+id/evnlsV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="8"
             android:orientation="vertical"
             android:weightSum="8">
 
@@ -602,6 +602,8 @@
                 android:layout_height="0dp"
                 android:hint="enter name"
                 android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/desi1V"
@@ -609,6 +611,8 @@
                 android:layout_height="0dp"
                 android:hint="enter description"
                 android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:layout_weight="1"/>
 
             <com.google.android.material.textfield.TextInputEditText
@@ -617,6 +621,8 @@
                 android:layout_height="0dp"
                 android:hint="enter name"
                 android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/desi2V"
@@ -624,12 +630,16 @@
                 android:layout_height="0dp"
                 android:hint="enter description"
                 android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/evni3V"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
@@ -637,6 +647,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter description"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
@@ -644,6 +656,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
@@ -652,6 +666,8 @@
                 android:layout_height="0dp"
                 android:hint="enter description"
                 android:isScrollContainer="true"
+                android:padding="1dp"
+                android:textSize="12sp"
                 android:layout_weight="1"/>
 
         </LinearLayout>
