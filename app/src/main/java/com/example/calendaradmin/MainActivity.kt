@@ -10,7 +10,6 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.isVisible
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -26,27 +25,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val insuBt = findViewById<Button>(R.id.insuBt)
-        val popupV = findViewById<LinearLayout>(R.id.popupV)
-        val calenV = findViewById<LinearLayout>(R.id.calenV)
+        val popupLn = findViewById<LinearLayout>(R.id.popupLn)
+        val calenLn = findViewById<LinearLayout>(R.id.calenLn)
         val bktcBt = findViewById<Button>(R.id.bktcBt)
         val backBt = findViewById<Button>(R.id.backBt)
         val nextBt = findViewById<Button>(R.id.nextBt)
         val mnthTx = findViewById<TextView>(R.id.mnthTx)
         val pdayTx = findViewById<TextView>(R.id.pdayTx)
-        //val ppupTx = findViewById<TextView>(R.id.ppupTx)
         val predBt = findViewById<Button>(R.id.predBt)
         val nexdBt = findViewById<Button>(R.id.nexdBt)
-        val inputV = findViewById<EditText>(R.id.inputV)
-
-        val evni1V = findViewById<EditText>(R.id.evni1V)
-        val desi1V = findViewById<EditText>(R.id.desi1V)
-        val evni2V = findViewById<EditText>(R.id.evni2V)
-        val desi2V = findViewById<EditText>(R.id.desi2V)
-        val evni3V = findViewById<EditText>(R.id.evni3V)
-        val desi3V = findViewById<EditText>(R.id.desi3V)
-        val evni4V = findViewById<EditText>(R.id.evni4V)
-        val desi4V = findViewById<EditText>(R.id.desi4V)
-
+        val inputEd = findViewById<EditText>(R.id.inputEd)
+        val evni1Ed = findViewById<EditText>(R.id.evni1Ed)
+        val desi1Ed = findViewById<EditText>(R.id.desi1Ed)
+        val evni2Ed = findViewById<EditText>(R.id.evni2Ed)
+        val desi2Ed = findViewById<EditText>(R.id.desi2Ed)
+        val evni3Ed = findViewById<EditText>(R.id.evni3Ed)
+        val desi3Ed = findViewById<EditText>(R.id.desi3Ed)
+        val evni4Ed = findViewById<EditText>(R.id.evni4Ed)
+        val desi4Ed = findViewById<EditText>(R.id.desi4Ed)
 
 
         val dayBtList = arrayOf(
@@ -219,7 +215,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        popupV.isVisible = false
+        popupLn.isVisible = false
 
 
         hideNFixDayNums()
@@ -257,23 +253,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun fillintext(){
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputV)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputEd)
 
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1V)
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1Ed)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1Ed)
 
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2V)
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2Ed)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2Ed)
 
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3V)
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3Ed)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3Ed)
 
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4V)
-            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4V)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4Ed)
+            getsingleValueFromDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4Ed)
 
-
-
-            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
             pdayTx.text = monthlist[month] + " " + day.toString()
         }
@@ -281,17 +274,13 @@ class MainActivity : AppCompatActivity() {
         for (i in dayBtList) {
 
             i.setOnClickListener {
-                popupV.isVisible = true
+                popupLn.isVisible = true
 
-                calenV.isVisible = false
+                calenLn.isVisible = false
 
                 day = Integer.parseInt(i.text.toString())
 
                 fillintext()
-
-
-
-
 
             }
         }
@@ -299,20 +288,20 @@ class MainActivity : AppCompatActivity() {
 
 
         insuBt.setOnClickListener {
-            addtoDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputV.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "note"), "calActivity", inputEd.getText().toString())
 
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1V.getText().toString())
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "name"), "calActivity", evni1Ed.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event1", "description"), "calActivity", desi1Ed.getText().toString())
 
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2V.getText().toString())
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "name"), "calActivity", evni2Ed.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event2", "description"), "calActivity", desi2Ed.getText().toString())
 
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3V.getText().toString())
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3V.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "name"), "calActivity", evni3Ed.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event3", "description"), "calActivity", desi3Ed.getText().toString())
 
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4V.getText().toString())
-            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4V.getText().toString())
-            //Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show()
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "name"), "calActivity", evni4Ed.getText().toString())
+            addtoDatabase(listOf(monthlist[month], day.toString(), "event4", "description"), "calActivity", desi4Ed.getText().toString())
+
         }
 
         predBt.setOnClickListener {
@@ -333,9 +322,8 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day -= 1
             }
-            fillintext()
-            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
 
+            fillintext()
         }
 
 
@@ -353,19 +341,15 @@ class MainActivity : AppCompatActivity() {
             }else{
                 day += 1
             }
+
             fillintext()
-            //getValueFromDatabase(listOf(monthlist[month], day.toString()), "calActivity", ppupTx)
-
-
         }
 
 
         bktcBt.setOnClickListener {
-            popupV.isVisible = false
+            popupLn.isVisible = false
 
-            calenV.isVisible = true
-
-            //ppupTx.text = ""
+            calenLn.isVisible = true
 
             pdayTx.text = "M D"
         }

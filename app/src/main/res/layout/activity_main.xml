@@ -8,7 +8,7 @@
 
 
     <LinearLayout
-        android:id="@+id/calenV"
+        android:id="@+id/calenLn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -531,7 +531,7 @@
 
 
     <LinearLayout
-        android:id="@+id/popupV"
+        android:id="@+id/popupLn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -588,7 +588,7 @@
         </LinearLayout>-->
 
         <LinearLayout
-            android:id="@+id/evnlsV"
+            android:id="@+id/evnlsLn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="8"
@@ -597,7 +597,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/evni1V"
+                android:id="@+id/evni1Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
@@ -606,7 +606,7 @@
                 android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desi1V"
+                android:id="@+id/desi1Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter description"
@@ -616,7 +616,7 @@
                 android:layout_weight="1"/>
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/evni2V"
+                android:id="@+id/evni2Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
@@ -625,7 +625,7 @@
                 android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desi2V"
+                android:id="@+id/desi2Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter description"
@@ -634,7 +634,7 @@
                 android:textSize="12sp"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/evni3V"
+                android:id="@+id/evni3Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
@@ -643,7 +643,7 @@
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desi3V"
+                android:id="@+id/desi3Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter description"
@@ -652,7 +652,7 @@
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/evni4V"
+                android:id="@+id/evni4Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter name"
@@ -661,7 +661,7 @@
                 android:isScrollContainer="true"
                 android:layout_weight="1"/>
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desi4V"
+                android:id="@+id/desi4Ed"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:hint="enter description"
@@ -678,7 +678,7 @@
             android:layout_height="0dp"
             android:layout_weight="1">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputV"
+                android:id="@+id/inputEd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="enter note"
