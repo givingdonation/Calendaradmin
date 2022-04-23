@@ -197,14 +197,14 @@ class MainActivity : AppCompatActivity() {
             var myRef = FirebaseDatabase.getInstance().getReference(reference)
 
             for (i in path.indices){
-                myRef = myRef.child(path[i]);
+                myRef = myRef.child(path[i])
             }
 
             //the code below was taken from the firebase documentation
             myRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myRef.setValue(inpu)
-                    Toast.makeText(getApplicationContext(), "html added", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplicationContext(), "events added", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
