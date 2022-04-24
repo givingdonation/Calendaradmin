@@ -116,13 +116,20 @@
             android:layout_height="0dp"
             android:orientation="horizontal"
             android:gravity="right">
-            <Button
-                android:id="@+id/day1Bt"
+
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                >
+                <Button
+                    android:id="@+id/day1Bt"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Button"
 
-                android:layout_weight="1"
-                android:text="Button" />
+                    />
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/day2Bt"
@@ -130,7 +137,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day3Bt"
@@ -138,7 +145,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day4Bt"
@@ -146,7 +153,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day5Bt"
@@ -154,7 +161,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day6Bt"
@@ -162,7 +169,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day7Bt"
@@ -170,7 +177,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
 
         </LinearLayout>
@@ -187,7 +194,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day9Bt"
@@ -195,7 +202,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day10Bt"
@@ -203,7 +210,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day11Bt"
@@ -211,7 +218,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day12Bt"
@@ -219,7 +226,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day13Bt"
@@ -227,7 +234,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day14Bt"
@@ -235,7 +242,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -249,7 +256,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day16Bt"
@@ -257,7 +264,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day17Bt"
@@ -265,7 +272,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day18Bt"
@@ -273,7 +280,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day19Bt"
@@ -281,7 +288,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day20Bt"
@@ -289,7 +296,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day21Bt"
@@ -297,7 +304,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -311,7 +318,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day23Bt"
@@ -319,7 +326,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day24Bt"
@@ -327,7 +334,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day25Bt"
@@ -335,7 +342,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day26Bt"
@@ -343,7 +350,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day27Bt"
@@ -351,7 +358,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day28Bt"
@@ -359,7 +366,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -373,7 +380,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day30Bt"
@@ -381,7 +388,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day31Bt"
@@ -389,7 +396,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day32Bt"
@@ -397,7 +404,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day33Bt"
@@ -405,7 +412,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day34Bt"
@@ -413,7 +420,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day35Bt"
@@ -421,7 +428,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -435,7 +442,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day37Bt"
@@ -443,7 +450,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day38Bt"
@@ -451,7 +458,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day39Bt"
@@ -459,7 +466,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day40Bt"
@@ -467,7 +474,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day41Bt"
@@ -475,7 +482,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
 
             <Button
                 android:id="@+id/day42Bt"
@@ -483,7 +490,7 @@
                 android:layout_height="match_parent"
 
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

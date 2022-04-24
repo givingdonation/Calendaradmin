@@ -89,7 +89,50 @@ class MainActivity : AppCompatActivity() {
             findViewById<Button>(R.id.day41Bt),
             findViewById<Button>(R.id.day42Bt)
         )
-
+        val dayRlList = arrayOf(
+            findViewById<RelativeLayout>(R.id.day1Rl),
+            findViewById<RelativeLayout>(R.id.day2Rl),
+            findViewById<RelativeLayout>(R.id.day3Rl),
+            findViewById<RelativeLayout>(R.id.day4Rl),
+            findViewById<RelativeLayout>(R.id.day5Rl),
+            findViewById<RelativeLayout>(R.id.day6Rl),
+            findViewById<RelativeLayout>(R.id.day7Rl),
+            findViewById<RelativeLayout>(R.id.day8Rl),
+            findViewById<RelativeLayout>(R.id.day9Rl),
+            findViewById<RelativeLayout>(R.id.day10Rl),
+            findViewById<RelativeLayout>(R.id.day11Rl),
+            findViewById<RelativeLayout>(R.id.day12Rl),
+            findViewById<RelativeLayout>(R.id.day13Rl),
+            findViewById<RelativeLayout>(R.id.day14Rl),
+            findViewById<RelativeLayout>(R.id.day15Rl),
+            findViewById<RelativeLayout>(R.id.day16Rl),
+            findViewById<RelativeLayout>(R.id.day17Rl),
+            findViewById<RelativeLayout>(R.id.day18Rl),
+            findViewById<RelativeLayout>(R.id.day19Rl),
+            findViewById<RelativeLayout>(R.id.day20Rl),
+            findViewById<RelativeLayout>(R.id.day21Rl),
+            findViewById<RelativeLayout>(R.id.day22Rl),
+            findViewById<RelativeLayout>(R.id.day23Rl),
+            findViewById<RelativeLayout>(R.id.day24Rl),
+            findViewById<RelativeLayout>(R.id.day25Rl),
+            findViewById<RelativeLayout>(R.id.day26Rl),
+            findViewById<RelativeLayout>(R.id.day27Rl),
+            findViewById<RelativeLayout>(R.id.day28Rl),
+            findViewById<RelativeLayout>(R.id.day29Rl),
+            findViewById<RelativeLayout>(R.id.day30Rl),
+            findViewById<RelativeLayout>(R.id.day31Rl),
+            findViewById<RelativeLayout>(R.id.day32Rl),
+            findViewById<RelativeLayout>(R.id.day33Rl),
+            findViewById<RelativeLayout>(R.id.day34Rl),
+            findViewById<RelativeLayout>(R.id.day35Rl),
+            findViewById<RelativeLayout>(R.id.day36Rl),
+            findViewById<RelativeLayout>(R.id.day37Rl),
+            findViewById<RelativeLayout>(R.id.day38Rl),
+            findViewById<RelativeLayout>(R.id.day39Rl),
+            findViewById<RelativeLayout>(R.id.day40Rl),
+            findViewById<RelativeLayout>(R.id.day41Rl),
+            findViewById<RelativeLayout>(R.id.day42Rl)
+        )
 
 
         val current = LocalDateTime.now()
@@ -104,11 +147,18 @@ class MainActivity : AppCompatActivity() {
         fun hideNFixDayNums() {
             mnthTx.text = monthlist[month] + " " + year.toString()
 
+            for (i in dayRlList) {
+                //i.text = ""
+                i.setBackground(ContextCompat.getDrawable(this, R.drawable.dark_blue_square))
+
+                i.isVisible = false
+            }
             for (i in dayBtList) {
                 i.text = ""
 
-                i.isVisible = false
-                i.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500))
+                //i.isVisible = false
+                //i.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500))
+                //i.background = ContextCompat.getDrawable(this, R.drawable.teal_square)
             }
 
 
@@ -127,11 +177,13 @@ class MainActivity : AppCompatActivity() {
             var monthlength = mLenList[month]
 
             for (i in 1..monthlength) {
+                dayRlList[(i + shift - 1)].isVisible = true
                 dayBtList[(i + shift - 1)].isVisible = true
 
                 dayBtList[(i + shift - 1)].text = i.toString()
                 if (i == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("dd"))) && month == Integer.parseInt(current.format(DateTimeFormatter.ofPattern("MM"))) - 1) {
-                    dayBtList[(i + shift - 1)].setBackgroundColor(Color.BLUE)
+                    dayRlList[(i + shift - 1)].setBackground(ContextCompat.getDrawable(this, R.drawable.teal_square))
+                //dayBtList[(i + shift - 1)].setBackgroundColor(Color.BLUE)
 
                 }
             }
